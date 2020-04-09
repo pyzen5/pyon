@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="google-signin-scope" content="profile email">
-  <meta name="google-signin-client_id" content="854247286743-1pa044598m7dl2evdep1es9dm1l52hha.apps.googleusercontent.com">
+  <meta name="google-signin-client_id"
+    content="854247286743-1pa044598m7dl2evdep1es9dm1l52hha.apps.googleusercontent.com">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
   <title>Pyon</title>
   <base href="/">
@@ -12,10 +14,18 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body class="mat-typography">
   <app-root></app-root>
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+  <a href="#" onclick="signOut();">Sign out</a>
   <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+    }
     function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
       var profile = googleUser.getBasicProfile();
@@ -32,4 +42,5 @@
     }
   </script>
 </body>
+
 </html>
