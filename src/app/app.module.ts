@@ -8,13 +8,17 @@ import { HeaderComponent } from './comp/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from './comp/footer/footer.component';
 import { MaterialuiModule } from './materialui/materialui.module';
+import { LoginComponent } from './comp/login/login.component';
+import { SidenavComponent } from './comp/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,

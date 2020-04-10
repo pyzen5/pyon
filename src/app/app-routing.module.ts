@@ -4,8 +4,9 @@ import { HomeComponent } from './pages/home/home.component';
 
 
 const routes: Routes = [
+  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
+  { path: 'ref', loadChildren: () => import('./ref/ref.module').then(m => m.RefModule) },
   { path: '', component: HomeComponent},
-  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) }
 ];
 
 @NgModule({
